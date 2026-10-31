@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>STREET CLASH</title><link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<section id="menu" class="screen">
+ <div class="logo">STREET <span>CLASH</span></div><p class="tagline">ENTER THE UNDERGROUND</p>
+ <div class="fighters"><div>NIRMAL <small>RED DRAGON</small></div><b>VS</b><div>PRIYA <small>PINK SHADOW</small></div></div>
+ <div class="menuActions">
+  <button id="startBtn" class="primary">START FIGHT</button>
+  <button id="settingsBtn">SETTINGS</button>
+  <button id="createRoomBtn">CREATE ONLINE ROOM</button>
+  <button id="joinRoomBtn">JOIN ROOM</button>
+ </div>
+ <div id="settingsPanel" class="settingsPanel hidden">
+  <b>GAME SETTINGS</b>
+  <label><input id="soundToggle" type="checkbox" checked> SOUND EFFECTS</label>
+  <label><input id="vibrationToggle" type="checkbox" checked> VIBRATION (MOBILE)</label>
+  <label>LANGUAGE <select id="languageSelect"><option value="en">ENGLISH</option><option value="ta">தமிழ்</option></select></label>
+  <button id="closeSettings">CLOSE</button>
+ </div>
+ <p class="note">BUILD 0.9 • MATCH PRESENTATION + SETTINGS</p>
+<div id="onlinePanel" class="onlinePanel hidden"><b>ONLINE 1 VS 1</b><p id="onlineStatus">Connect to the game server</p><div id="roomCode" class="roomCode"></div><input id="roomInput" maxlength="4" inputmode="numeric" placeholder="4-DIGIT ROOM CODE"><div class="onlineActions"><button id="copyRoomBtn">COPY CODE</button><button id="connectRoomBtn" class="primary">CONNECT</button><button id="closeOnlineBtn">CLOSE</button></div><small>Requires the STREET CLASH server to be running.</small></div>
+</section>
+<div id="hud" class="hidden"><div class="health left"><b>NIRMAL</b><div class="track"><i id="hp1"></i></div><small id="rounds1">ROUNDS 0</small><div class="powerTrack"><i id="power1"></i></div><small id="powerText">POWER 0%</small></div><div id="clock">180</div><div class="health right"><b>PRIYA</b><div class="track"><i id="hp2"></i></div><small id="rounds2">ROUNDS 0</small><div class="powerTrack"><i id="power2"></i></div></div></div>
+<div id="status" class="hidden"></div><div id="resultPanel" class="resultPanel hidden"><div id="resultTitle">NIRMAL WINS</div><div id="resultSub">MATCH COMPLETE</div><div class="resultButtons"><button id="resultRematch" class="primary">REMATCH</button><button id="resultMenu">MAIN MENU</button></div></div><div id="combo" class="hidden">0 HIT COMBO</div><div class="topActions"><button id="menuBtn">MENU</button><button id="rematchBtn" class="hidden">REMATCH</button></div>
+<div id="rotate">ROTATE YOUR PHONE<br><small>STREET CLASH PLAYS IN LANDSCAPE</small></div>
+<div id="touchControls" class="hidden"><div id="joystick"><div id="knob"></div></div><div class="buttons"><button data-action="punch">PUNCH</button><button data-action="kick">KICK</button><button data-action="block">BLOCK</button><button data-action="jump">JUMP</button><button data-action="dodge">DODGE</button><button data-action="special" class="special">SPECIAL</button></div></div>
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script type="module" src="./src/online.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="./src/main.js"></script>
+</body></html>
