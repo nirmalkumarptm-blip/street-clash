@@ -1,0 +1,17 @@
+{
+  "name": "street-clash",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "server": "npm --prefix server start"
+  },
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
